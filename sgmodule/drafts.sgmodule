@@ -1,0 +1,15 @@
+#!name = Drafts
+#!desc = 解锁会员
+#!openUrl = https://t.me/ddgksf2021/7245
+#!author = 墨鱼[https://github.com/ddgksf2013/ddgksf2013],jamb777[https://github.com/jamb777]
+#!homepage = https://apps.apple.com/cn/app/drafts/id1236254471
+#!icon = https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ef/0f/91/ef0f9166-ebc5-7cdd-2ac2-c23ba812d1c6/Placeholder.mill/128x128bb-75.png
+#!category = jamb777的surge模块
+#!date = 2025-12-02 21:55:30
+#!version = 0.0.1
+
+[Script]
+drafts = type=http-response,pattern=^https?:\/\/backend\.getdrafts\.com\/api\/v\d\/verification,requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/jamb777/owner/refs/heads/main/scripts/drafts.vip.js
+
+[MITM]
+hostname = %APPEND% backend.getdrafts.com

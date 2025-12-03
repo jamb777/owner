@@ -1,0 +1,26 @@
+#!name = 看东方
+#!desc = 提取视频链接
+#!openUrl = https://t.me/Jsforbaby
+#!author = baby[https://t.me/Jsforbaby],jamb777[https://github.com/jamb777]
+#!homepage = https://apps.apple.com/cn/app/id1008005924
+#!icon = https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/5e/69/71/5e6971aa-ea6d-81c0-c210-a74758aef2c6/AppIcon-0-0-1x_U007emarketing-0-8-0-0-85-220.png/128x128ia-75.png
+#!category = jamb777的surge模块
+#!date = 2025-12-02 21:55:30
+#!version = 0.0.1
+
+[Script]
+# NBA 视频 & 电视剧接口
+KDF_Video_API = type=http-response,pattern=^https?:\/\/bp-api\.bestv\.(?:com\.cn|cn)\/cms\/api\/(live\/studio\/id\/v8|c\/player\/common),requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/KDF/video-parser.js
+
+# HTML 页面（360.com 视频页）
+KDF_Video_HTML = type=http-response,pattern=^https?:\/\/360\.com\/(?:video|nba\.m3u|dianshi\.m3u)$,requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/KDF/video-parser.js
+
+[URL Rewrite]
+# 首页弹窗广告
+^https?:\/\/bp-api\.bestv\.cn\/cms\/api\/advertise\/project\/advertise\/popup\/scene$ - reject
+
+# 开屏广告（清除缓存）
+^https?:\/\/bp-api\.bestv\.cn\/cms\/api\/free\/open\/advertisingV2$ - reject
+
+[MITM]
+hostname = %APPEND% 360.com, bp-api.bestv.com.cn, bp-api.bestv.cn

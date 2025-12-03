@@ -1,0 +1,23 @@
+#!name = 万年历Pro
+#!desc = 解锁会员
+#!openUrl = https://t.me/ddgksf2021/7245
+#!author = 墨鱼[https://github.com/ddgksf2013/ddgksf2013],jamb777[https://github.com/jamb777]
+#!homepage = https://apps.apple.com/cn/app/id419805549
+#!icon = https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/96/7b/b5/967bb564-7a1a-dbed-372c-817d1c4fefd5/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/128x128ia-75.png
+#!category = jamb777的surge模块
+#!date = 2025-12-02 21:55:30
+#!version = 0.0.1
+
+[Rule]
+DOMAIN,ad.51wnl-cq.com,REJECT
+DOMAIN,adn.51wnl-cq.com,REJECT
+
+[Script]
+# 是否会员接口
+WNL_IsMember = type=http-response,pattern=^https?:\/\/r\.51wnl-cq\.com\/api\/Member\/IsMember,requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/jamb777/owner/refs/heads/main/scripts/wannianli.vip.js
+
+# 获取扩展信息接口
+WNL_GetExtInfo = type=http-response,pattern=^https?:\/\/r\.51wnl-cq\.com\/Api\/User\/GetExtInfo,requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/jamb777/owner/refs/heads/main/scripts/wannianli.vip.js
+
+[MITM]
+hostname = %APPEND% r.51wnl-cq.com

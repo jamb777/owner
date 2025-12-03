@@ -1,0 +1,15 @@
+#!name = 粤语翻译神器
+#!desc = 解锁会员
+#!openUrl = https://t.me/Aa28413761/2022
+#!author = baby[https://t.me/Jsforbaby],jamb777[https://github.com/jamb777]
+#!homepage = https://apps.apple.com/cn/app/id1387094171
+#!icon = https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/45/37/6a/45376a91-1f1f-e4c5-975f-ad7a4d2c3f2a/AppIcon-1x_U007emarketing-0-8-0-0-85-220-0.png/128x128ia-75.png
+#!category = jamb777的surge模块
+#!date = 2025-12-02 21:55:30
+#!version = 0.0.1
+
+[Script]
+yyfysq = type=http-response,pattern=^https?:\/\/api\.528529\.com\/apple_product\/,requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/yyfysq.js
+
+[MITM]
+hostname = %APPEND% api.528529.com

@@ -1,0 +1,22 @@
+#!name = 搜图神器 Pro
+#!desc = 解锁会员
+#!openUrl = https://t.me/ddgksf2021/7245
+#!author = 墨鱼[https://github.com/ddgksf2013/ddgksf2013],jamb777[https://github.com/jamb777]
+#!homepage = https://apps.apple.com/cn/app/id1576499990
+#!icon = https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/52/67/6a/52676a11-1a75-d575-d335-0fbe35db5e5a/AppIcon-0-0-1x_U007emarketing-0-8-0-sRGB-85-220.png/128x128ia-75.png
+#!category = jamb777的surge模块
+#!date = 2025-12-02 21:55:30
+#!version = 0.0.1
+
+[Script]
+STSQ_Config = type=http-response,pattern=^https?:\/\/wallpaper\.soutushenqi\.com\/v\d\/config,requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/jamb777/owner/refs/heads/main/scripts/soutushenqi.vip.js
+STSQ_Account = type=http-response,pattern=^https?:\/\/wallpaper\.soutushenqi\.com\/api\/v\d\/account,requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/jamb777/owner/refs/heads/main/scripts/soutushenqi.vip.js
+
+[Body Rewrite]
+http-request ^https?:\/\/wallpaper\.soutushenqi\.com\/v\d\/config config_key=stsq_ios_home_vipI config_key=
+
+[URL Rewrite]
+^https?:\/\/wallpaper\.soutushenqi\.com\/v\d\/home\/dialog _ reject
+
+[MITM]
+hostname = %APPEND% wallpaper.soutushenqi.com

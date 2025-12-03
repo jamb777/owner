@@ -1,0 +1,21 @@
+#!name = 端传媒Pro
+#!desc = 解锁手机APP端和网页端文章阅读权限
+#!openUrl = https://t.me/ddgksf2021/7245
+#!author = 墨鱼[https://github.com/ddgksf2013/ddgksf2013],jamb777[https://github.com/jamb777]
+#!tips= 无需登录，直接打开文章观看
+#!homepage = https://apps.apple.com/us/app/id1020176943
+#!icon = https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/5a/29/f9/5a29f963-6e37-e716-8442-47758b6a7764/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/128x128ia-75.png
+#!category = jamb777的surge模块
+#!date = 2025-12-02 21:55:30
+#!version = 0.0.1
+
+[Script]
+Initium_Verify_Sub = type=http-response,pattern=^https?:\/\/app\.theinitium\.com\/subs\/[a-zA-Z_]+\/verify_subscription,requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/jamb777/owner/refs/heads/main/scripts/duan.vip.js
+Initium_Wallkit_User = type=http-response,pattern=^https?:\/\/api\.wallkit\.net\/api\/v\d\/user,requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/jamb777/owner/refs/heads/main/scripts/duan.vip.js
+Initium_Editionfeed = type=http-response,pattern=^https?:\/\/app\.theinitium\.com\/editionfeed.*pugpig_atom_contents\.json,requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/jamb777/owner/refs/heads/main/scripts/duan.vip.js
+
+[Header Rewrite]
+http-request ^https?:\/\/app\.theinitium\.com\/editionfeed.*pugpig_atom_contents\.json header-del If-None-Match
+
+[MITM]
+hostname = %APPEND% app.theinitium.com, api.wallkit.net
