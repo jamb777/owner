@@ -9,14 +9,10 @@
 #!version = 0.0.1
 
 [Script]
-# 1. 核心解锁脚本（针对 receipts / subscribers 具体资源）
-Notability_Receipts_Main = type=http-response,pattern=^https:\/\/isi\.csan\.[a-z.]+\/.+\/(receipts$|subscribers\/[^/]+$),requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/jamb777/owner/refs/heads/main/scripts/goodbility.vip.js
-
-# 2. 删除校验相关 Header（更广泛匹配 receipts / subscribers）
-Notability_Receipts_Header = type=http-response,pattern=^https:\/\/isi\.csan\.[a-z.]+\/.+\/(receipts|subscribers),requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/deleteHeader.js
-
-# 3. Notability 自身接口
-Notability_Global = type=http-response,pattern=^https?:\/\/notability\.com\/global,requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/jamb777/owner/refs/heads/main/scripts/goodbility.vip.js
-
+# > Goodbility@ddgksf2013
+Goodbility.Vip1 = type=http-response, pattern=^https:\/\/isi\.csan.[a-z.]+\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/jamb777/owner/refs/heads/main/scripts/goodbility.vip.js, requires-body=true, max-size=-1, timeout=60
+Goodbility.Vip2 = type=http-request,  pattern=^https:\/\/isi\.csan.[a-z.]+\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/deleteHeader.js, timeout=60
+Goodbility.Vip3 = type=http-response, pattern=^https?:\/\/notability\.com\/global, script-path=https://raw.githubusercontent.com/jamb777/owner/refs/heads/main/scripts/goodbility.vip.js, requires-body=true, max-size=-1, timeout=60
 [MITM]
 hostname = %APPEND% isi.csan.*, notability.com
+
