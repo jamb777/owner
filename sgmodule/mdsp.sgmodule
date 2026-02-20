@@ -4,15 +4,15 @@
 #!author = baby[https://t.me/Jsforbaby],jamb777[https://github.com/jamb777]
 #!homepage = https://t.me/Jsforbaby
 #!category = jamb777的surge模块
-#!date = 2025-12-02 21:55:30
-#!version = 0.0.1
+#!date = 2026-02-20 21:45:30
+#!version = 0.0.2
 
 [Script]
-会员 = type=http-response,pattern=https://(d2ht17eu5c0ykz|d1sn57bew5rukg).cloudfront.net/api/app/user/info,requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/chmg2025/js/refs/heads/main/mdsp.js
+会员 = type=http-response, pattern=https://((d2ht17eu5c0ykz|d1sn57bew5rukg).cloudfront.net|madddh5.yqsbdx.com)/api/app/user/info, script-path=https://raw.githubusercontent.com/chmg2025/js/refs/heads/main/mdsp.js, requires-body=true, timeout=60
 
-视频 = type=http-response,pattern=https://(d2ht17eu5c0ykz|d1sn57bew5rukg).cloudfront.net/api/app/media/play,requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/chmg2025/js/refs/heads/main/mdsp.js
+视频 = type=http-response, pattern=https://((d2ht17eu5c0ykz|d1sn57bew5rukg).cloudfront.net|madddh5.yqsbdx.com)/api/app/media/play, script-path=https://raw.githubusercontent.com/chmg2025/js/refs/heads/main/mdsp.js, requires-body=true, timeout=60
 
-广告 = type=http-response,pattern=https://(d2ht17eu5c0ykz|d1sn57bew5rukg).cloudfront.net/(api/app/ping/config|api/app/media/v5/home),requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/chmg2025/js/refs/heads/main/mdsp.js
+广告 = type=http-response, pattern=https://((d2ht17eu5c0ykz|d1sn57bew5rukg).cloudfront.net|madddh5.yqsbdx.com)/(api/app/ping/config|api/app/media/v5/home), script-path=https://raw.githubusercontent.com/chmg2025/js/refs/heads/main/mdsp.js, requires-body=true, timeout=60
 
 [MITM]
-hostname = %APPEND% *.cloudfront.net
+hostname = %APPEND% *.cloudfront.net, *.yqsbdx.com
